@@ -7,8 +7,6 @@ This notebook bridges **particle-physics intuition** and **statistical inference
 
 > **Format:** Stand-alone Jupyter Notebook (`notebook.ipynb`) with code, derivations, methodology, and full results.
 
----
-
 ## 🔬 Key Features
 
 * **Dual metrics:**
