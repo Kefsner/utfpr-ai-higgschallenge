@@ -1,13 +1,11 @@
 # Higgs Boson Discovery with Machine Learning
 
-A scientific Jupyter notebook reproducing a **Higgs boson discovery analysis** using the official **ATLAS Higgs Boson Machine Learning Challenge (HiggsML)** dataset.
-Unlike standard ML benchmarks (e.g. MNIST or Iris), the goal is to maximize **discovery significance** — quantified by the **Approximate Median Significance (AMS)** — rather than accuracy or F1.
+A Jupyter notebook developed as the **final project** for the course *CA006NC – Inteligência Artificial (2025/02)*, part of the **MSc in Computer Science (PPGI)** at **UTFPR**.
 
-This notebook bridges **particle-physics intuition** and **statistical inference**, showing how modern gradient-boosting models can isolate a rare signal (H→τ⁺τ⁻) from an overwhelming background.
+The notebook reproduces a **Higgs boson discovery analysis** using the official **ATLAS Higgs Boson Machine Learning Challenge (HiggsML)** dataset.
+Unlike typical machine learning benchmarks (e.g., MNIST or Iris), the objective is to maximize **discovery significance** — measured by the **Approximate Median Significance (AMS)** — rather than conventional metrics such as accuracy or F1-score.
 
-> **Format:** Stand-alone Jupyter Notebook (`notebook.ipynb`) with full code, derivations, methodology, and results.
-
----
+This work bridges **particle-physics intuition** and **statistical learning**, demonstrating how modern **ensemble and gradient-boosting models** can isolate a rare **H → τ⁺τ⁻** signal from an overwhelming background of Standard Model processes.
 
 ## 🔬 Key Features
 
@@ -54,10 +52,10 @@ pip install -r requirements.txt
 
 * **Training metric:** Weighted ROC AUC (threshold-independent ranking).
 * **Discovery metric:**
-  [
+  $$
   \mathrm{AMS} = \sqrt{2\left[(s+b+b_\text{reg})\ln!\left(1+\frac{s}{b+b_\text{reg}}\right) - s\right]}, \quad b_\text{reg}=10
-  ]
-  where ( s ) and ( b ) are weighted signal and background yields above the optimal threshold.
+  $$
+  where $s$ and $b$ are weighted signal and background yields above the optimal threshold.
 * **Threshold optimization:** Exact sweep over all unique scores.
 * **Cross-validation:** Weighted Stratified K-Fold (5 splits).
 * **Tuning:** Optuna study maximizing mean AMS across folds.
